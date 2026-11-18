@@ -1,0 +1,16 @@
+---
+import Construction from '../../components/Construction.astro';
+---
+
+<Construction
+	title="The icon in 3D"
+	lead="The flat drawing turns out to lie on a floor. The two halves grow out of it and a beam of light sweeps across them. Drag at the end to look around."
+	current="3d"
+>
+	<canvas id="stage" role="img" aria-labelledby="step-name"></canvas>
+	<p class="webgl-message">This browser cannot show WebGL. Watch the <a href="/construction/">clean animation</a> instead.</p>
+</Construction>
+
+<script>
+	import '../../animation/3d.js';
+</script>

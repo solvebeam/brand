@@ -1,0 +1,26 @@
+---
+import Construction from '../../components/Construction.astro';
+---
+
+<Construction
+	title="How the icon is built"
+	lead="The icon is drawn on a 9 × 9 grid. Seven rows and columns carry the shape, the outer ones are margin. Circles and straight lines do the rest."
+	current="clean"
+>
+	<svg id="stage" viewBox="-80 -80 1060 1060" role="img" aria-labelledby="step-name">
+		<g id="grid">
+			<g id="grid-rows"></g>
+			<g id="grid-cols"></g>
+		</g>
+		<g id="labels"></g>
+		<g id="icon">
+			<g id="icon-fill"></g>
+			<g id="construction"></g>
+			<g id="icon-outline"></g>
+		</g>
+	</svg>
+</Construction>
+
+<script>
+	import '../../animation/animation.js';
+</script>

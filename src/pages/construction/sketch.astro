@@ -1,0 +1,49 @@
+---
+import Construction from '../../components/Construction.astro';
+---
+
+<Construction
+	title="The icon, sketched"
+	lead="The same construction, drawn by hand: pencil on paper in the light theme, chalk on a blackboard in the dark theme."
+	current="sketch"
+	sketch
+>
+	<svg id="stage" viewBox="-80 -80 1060 1060" role="img" aria-labelledby="step-name">
+		<defs>
+			<filter id="grain" x="0" y="0" width="100%" height="100%">
+				<feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="7"></feTurbulence>
+				<feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.4 -0.55"></feColorMatrix>
+			</filter>
+		</defs>
+		<rect class="grain" x="-80" y="-80" width="1060" height="1060"></rect>
+		<g id="grid">
+			<g id="grid-rows" class="pencil grid-line"></g>
+			<g id="grid-cols" class="pencil grid-line"></g>
+		</g>
+		<g id="labels"></g>
+		<g id="icon">
+			<g id="shape" class="pencil hatch"></g>
+			<g id="icon-fill" class="crayon"></g>
+			<g id="construction" class="pencil outline"></g>
+			<g id="icon-outline" class="pencil trace"></g>
+		</g>
+		<g id="pencil" opacity="0">
+			<g class="tool tool-pencil" transform="rotate(-58)">
+				<path class="tool-body" d="M26 -10 H132 V10 H26 Z"></path>
+				<path class="tool-shade" d="M26 3 H132 V10 H26 Z"></path>
+				<path class="tool-wood" d="M0 0 L26 -10 V10 Z"></path>
+				<path class="tool-lead" d="M0 0 L9 -3.5 V3.5 Z"></path>
+				<path class="tool-ferrule" d="M132 -10 H142 V10 H132 Z"></path>
+				<path class="tool-eraser" d="M142 -10 H154 Q160 -10 160 -4 V4 Q160 10 154 10 H142 Z"></path>
+			</g>
+			<g class="tool tool-chalk" transform="rotate(-58)">
+				<rect class="tool-body" x="-2" y="-9" width="86" height="18" rx="4"></rect>
+			</g>
+		</g>
+	</svg>
+	<button slot="controls" type="button" id="reseed">New sketch</button>
+</Construction>
+
+<script>
+	import '../../animation/sketch.js';
+</script>

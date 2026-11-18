@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="900"
+   height="900"
+   viewBox="0 0 900 900"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   sodipodi:docname="SolveBeam Logo Blueprint.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.66832879"
+     inkscape:cx="331.4237"
+     inkscape:cy="497.50962"
+     inkscape:window-width="1792"
+     inkscape:window-height="1006"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Background"
+     style="stroke-width:0.264583;display:inline"
+     transform="scale(3.7795276)">
+    <rect
+       style="display:inline;fill:#999999;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-3-9-3-3"
+       width="238.125"
+       height="26.458332"
+       x="0"
+       y="211.66666"
+       inkscape:label="Row 9" />
+    <rect
+       style="display:inline;fill:#b3b3b3;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-5-3-0"
+       width="238.125"
+       height="26.458332"
+       x="0"
+       y="185.20833"
+       inkscape:label="Row 8" />
+    <rect
+       style="display:inline;fill:#999999;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-3-9-3"
+       width="238.125"
+       height="26.458332"
+       x="1.5987211e-15"
+       y="158.75"
+       inkscape:label="Row 7" />
+    <rect
+       style="display:inline;fill:#b3b3b3;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-5-3"
+       width="238.125"
+       height="26.458332"
+       x="1.5987211e-15"
+       y="132.29167"
+       inkscape:label="Row 6" />
+    <rect
+       style="display:inline;fill:#999999;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-3-9"
+       width="238.125"
+       height="26.458332"
+       x="0"
+       y="105.83333"
+       inkscape:label="Row 5" />
+    <rect
+       style="display:inline;fill:#b3b3b3;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-5"
+       width="238.125"
+       height="26.458332"
+       x="0"
+       y="79.375"
+       inkscape:label="Row 4" />
+    <rect
+       style="display:inline;fill:#999999;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-3"
+       width="238.125"
+       height="26.458332"
+       x="-9.992007e-17"
+       y="52.916664"
+       inkscape:label="Row 3" />
+    <rect
+       style="display:inline;fill:#b3b3b3;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3"
+       width="238.125"
+       height="26.458332"
+       x="0"
+       y="26.458332"
+       inkscape:label="Row 2" />
+    <rect
+       style="display:inline;fill:#999999;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-3-8"
+       width="238.125"
+       height="26.458332"
+       x="0"
+       y="0"
+       inkscape:label="Row 1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Logo"
+     transform="scale(3.7795276)"
+     style="stroke-width:0.264583">
+    <g
+       inkscape:label="Arrows"
+       inkscape:groupmode="layer"
+       id="layer1"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+       transform="translate(-13.229163)">
+      <rect
+         style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-2-2"
+         width="185.20833"
+         height="185.20833"
+         x="39.687496"
+         y="26.458336"
+         inkscape:label="Outer block" />
+      <rect
+         style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-2-2-3"
+         width="132.29167"
+         height="132.29167"
+         x="66.145836"
+         y="52.916668"
+         inkscape:label="Inner block" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer5"
+       inkscape:label="Bow 2"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+       transform="translate(-13.229167)">
+      <circle
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+         id="path1-6-4"
+         cx="158.75"
+         cy="145.52083"
+         r="79.375"
+         inkscape:label="Outer circle" />
+      <circle
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+         id="path1-0"
+         cx="158.75"
+         cy="145.52083"
+         r="66.145836"
+         inkscape:label="Bow circle" />
+      <rect
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-2-4-1"
+         width="119.0625"
+         height="132.29167"
+         x="39.6875"
+         y="79.375"
+         inkscape:label="Half rectangle" />
+      <rect
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-2-7"
+         width="119.0625"
+         height="26.458332"
+         x="39.6875"
+         y="185.20833"
+         inkscape:label="Tail rectangle" />
+      <rect
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-0-1"
+         width="52.916664"
+         height="26.458334"
+         x="105.83333"
+         y="79.375"
+         inkscape:label="Neck rectangle" />
+      <circle
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+         id="path1-5-3"
+         cx="158.75"
+         cy="145.52083"
+         r="39.6875"
+         inkscape:label="Inner circle" />
+      <circle
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="path3-7-8"
+         cx="105.83333"
+         cy="92.604164"
+         r="26.458332"
+         inkscape:label="Head circle" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer2"
+       inkscape:label="Bow 1"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+       transform="translate(-13.229177)">
+      <circle
+         style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+         id="path1-6"
+         cx="105.83334"
+         cy="92.604164"
+         r="79.375"
+         inkscape:label="Outer circle" />
+      <circle
+         style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+         id="path1"
+         cx="105.83334"
+         cy="92.604172"
+         r="66.145836"
+         inkscape:label="Bow circle" />
+      <rect
+         style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-2-4"
+         width="119.0625"
+         height="132.29167"
+         x="105.83333"
+         y="26.458336"
+         inkscape:label="Half rectangle" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-2"
+         width="119.0625"
+         height="26.458332"
+         x="105.83334"
+         y="26.458332"
+         inkscape:label="Tail rectangle" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7-0"
+         width="52.916664"
+         height="26.458334"
+         x="105.83333"
+         y="132.29167"
+         inkscape:label="Neck rectangle" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="path3-7"
+         cx="158.75"
+         cy="145.52083"
+         r="26.458332"
+         inkscape:label="Head circle" />
+      <circle
+         style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dasharray:none;stroke-opacity:1"
+         id="path1-5"
+         cx="105.83334"
+         cy="92.604172"
+         r="39.6875"
+         inkscape:label="Inner circle" />
+    </g>
+  </g>
+</svg>

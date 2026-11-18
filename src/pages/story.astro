@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const name = [
+	['Solve', 'The drive to find solutions, reduce complexity and take on hard problems.'],
+	['Beam', 'Focus and clarity, like a ray of light cutting through the dark. In construction, a beam is also a load-bearing part of the structure.'],
+	['A Frisian root', 'In Frisian, "beam" also means tree. It is a nod to family roots, to the Frisian Woodlands and to the small oak grove next to home.'],
+];
+
+const icon = [
+	['S and B', 'An interlocking S for Solve and B for Beam, in balance like yin and yang.'],
+	['< and >', 'The two arrowheads are the angle brackets of code, a reference to programming and the web.'],
+	['Seven layers', 'The shape is built on seven rows, standing for completeness, structure and solutions that last.'],
+	['Laser orange', 'The bright colour is inspired by laser beams and expresses focus, energy and precision.'],
+];
+---
+
+<Layout title="Story" description="What the name SolveBeam means and what the icon stands for.">
+	<div class="wrap">
+		<header class="page-head">
+			<p class="eyebrow">Story</p>
+			<h1>Clear solutions, solid foundations</h1>
+			<p class="lead">SolveBeam stands for precision, simplicity and innovation in web development. It is a home for open-source projects, creative code and modern web technology.</p>
+		</header>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>The name</h2>
+			</div>
+			<div class="story-grid">
+				{name.map(([title, text]) => <div><h3>{title}</h3><p>{text}</p></div>)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>The icon</h2>
+			</div>
+			<div class="story-grid">
+				{icon.map(([title, text]) => <div><h3>{title}</h3><p>{text}</p></div>)}
+			</div>
+			<div class="actions"><a class="button" href="/construction/">See how it is built</a></div>
+		</section>
+
+		<section class="section">
+			<p class="quote">Let's build something great, one solution at a time.</p>
+		</section>
+	</div>
+</Layout>

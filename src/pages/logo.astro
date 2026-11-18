@@ -1,0 +1,128 @@
+---
+import AssetCard from '../components/AssetCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { iconAsset, iconVariants, logoAsset, logoVariants, wordmarkAsset, wordmarkVariants } from '../lib/assets.js';
+
+const logo = '/assets/logo/horizontal/svg/solvebeam-logo-horizontal-on-light.svg';
+
+const donts = [
+	['bad-stretch', 'Stretch or squash it.'],
+	['bad-rotate', 'Rotate it.'],
+	['bad-color', 'Change its colours.'],
+	['bad-shadow', 'Add shadows or effects.'],
+];
+---
+
+<Layout title="Logo" description="The SolveBeam icon, logo and wordmark in every variant, with clear space, minimum size and usage rules.">
+	<div class="wrap">
+		<header class="page-head">
+			<p class="eyebrow">Logo</p>
+			<h1>Icon, logo and wordmark</h1>
+			<p class="lead">Use the horizontal logo by default. Use the stacked logo in square spaces, and the icon alone where the name is already clear.</p>
+		</header>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Horizontal logo</h2>
+				<p>The primary logo. Choose "On light" or "On dark" to match the background.</p>
+			</div>
+			<div class="grid grid-wide">
+				{logoVariants.map(([id, label]) => <AssetCard title={label} asset={logoAsset('horizontal', id)} alt={`SolveBeam horizontal logo, ${label}`} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Stacked logo</h2>
+				<p>For square and narrow spaces.</p>
+			</div>
+			<div class="grid">
+				{logoVariants.map(([id, label]) => <AssetCard title={label} asset={logoAsset('stacked', id)} alt={`SolveBeam stacked logo, ${label}`} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Icon</h2>
+				<p>The gradient is the standard. Use a single colour when printing or engraving, or when a gradient is not possible.</p>
+			</div>
+			<div class="grid">
+				{iconVariants.map(([id, label]) => <AssetCard title={label} asset={iconAsset(id)} alt={`SolveBeam icon, ${label}`} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Wordmark</h2>
+				<p>Roboto Bold, converted to outlines. Use it only where the icon already appears nearby.</p>
+			</div>
+			<div class="grid grid-wide">
+				{wordmarkVariants.map(([id, label]) => <AssetCard title={label} asset={wordmarkAsset(id)} alt={`SolveBeam wordmark, ${label}`} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Clear space</h2>
+				<p>Keep at least one dot of the icon free on every side. That is about a quarter of the icon's height.</p>
+			</div>
+			<div class="figure">
+				<svg viewBox="-150 -150 3072.89 853.55" role="img" aria-label="The logo with one dot of clear space on every side">
+					<rect x="-141.4" y="-141.4" width="3055.7" height="836.4" fill="#fa4616" fill-opacity="0.08" stroke="#fa4616" stroke-width="5" stroke-dasharray="26 18"></rect>
+					<rect x="0" y="0" width="2772.89" height="553.55" fill="#ffffff"></rect>
+					<image href={logo} width="2772.89" height="553.55"></image>
+				</svg>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Minimum size</h2>
+				<p>Below these sizes the details start to close up. The 16 px icon is meant for favicons only.</p>
+			</div>
+			<div class="figure sizes">
+				<div><img src={logo} alt="Horizontal logo at 96 pixels wide" width="96" /><span>Logo 96 px / 25 mm</span></div>
+				<div><img src="/assets/logo/stacked/svg/solvebeam-logo-stacked-on-light.svg" alt="Stacked logo at 64 pixels wide" width="64" /><span>Stacked 64 px / 18 mm</span></div>
+				<div><img src="/assets/icon/svg/solvebeam-icon-gradient.svg" alt="Icon at 24 pixels" width="24" /><span>Icon 24 px / 6 mm</span></div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Good use</h2>
+			</div>
+			<div class="grid">
+				<div class="rule rule-yes">
+					<div class="rule-preview"><img src={logo} alt="" /></div>
+					<p><b>Do</b> use the full-colour logo on white or light backgrounds.</p>
+				</div>
+				<div class="rule rule-yes">
+					<div class="rule-preview tone-dark"><img src="/assets/logo/horizontal/svg/solvebeam-logo-horizontal-on-dark.svg" alt="" /></div>
+					<p><b>Do</b> use the on-dark logo on Ink or other dark backgrounds.</p>
+				</div>
+				<div class="rule rule-yes">
+					<div class="rule-preview" style="background:#fa4616"><img src="/assets/logo/horizontal/svg/solvebeam-logo-horizontal-ink.svg" alt="" /></div>
+					<p><b>Do</b> use the one-colour Ink logo on Beam Orange.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Please avoid</h2>
+			</div>
+			<div class="grid">
+				{donts.map(([effect, text]) => (
+					<div class="rule rule-no">
+						<div class="rule-preview"><img class={effect} src={logo} alt="" /></div>
+						<p><b>Don't</b> {text.charAt(0).toLowerCase() + text.slice(1)}</p>
+					</div>
+				))}
+				<div class="rule rule-no">
+					<div class="rule-preview bad-contrast"><img src={logo} alt="" /></div>
+					<p><b>Don't</b> place the gradient logo on a colour that swallows it.</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</Layout>

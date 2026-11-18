@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { color, colors, contrast, contrastPairs, gradient, hexToRgb, rgbToHsl } from '../brand/tokens.js';
+
+const groups = [
+	['brand', 'Brand colours', 'Beam Orange is the solid brand colour. Beam Red and Master Nacho exist to form the gradient.'],
+	['support', 'Accessible orange', 'Beam Orange is too light for small text on white. These two tints keep links readable.'],
+	['neutral', 'Neutrals', 'Ink and Paper carry most of every layout, so the orange stays special.'],
+];
+
+const details = (hex) => {
+	const rgb = hexToRgb(hex);
+	const hsl = rgbToHsl(rgb);
+
+	return { rgb: `rgb(${rgb.join(', ')})`, hsl: `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` };
+};
+
+const readableOn = (hex) => (contrast(hex, '#1a1a1a') >= contrast(hex, '#ffffff') ? '#1a1a1a' : '#ffffff');
+
+const pairs = contrastPairs.map((pair) => {
+	const text = color(pair.text);
+	const background = color(pair.background);
+	const ratio = contrast(text.hex, background.hex);
+
+	return { text, background, ratio: ratio.toFixed(2), use: pair.minimum >= 4.5 ? 'All text' : 'Large text and shapes only' };
+});
+---
+
+<Layout title="Colour" description="The SolveBeam colour palette: Beam Orange, the Beam Gradient and neutrals, with HEX, RGB and HSL values and contrast rules.">
+	<div class="wrap">
+		<header class="page-head">
+			<p class="eyebrow">Colour</p>
+			<h1>Bright like a laser, calm around it</h1>
+			<p class="lead">The orange stands for focus, energy and precision. It works best as a clear accent on quiet neutrals.</p>
+		</header>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>{gradient.name}</h2>
+				<p>Reserved for the icon and small brand moments. It always runs from red at the top left to Master Nacho at the bottom right.</p>
+			</div>
+			<div class="gradient-bar" role="img" aria-label="Gradient from red to Master Nacho"></div>
+			<p class="caption"><button class="copy" type="button" data-copy={gradient.css}>{gradient.css}</button></p>
+		</section>
+
+		{groups.map(([id, title, text]) => (
+			<section class="section">
+				<div class="section-head">
+					<h2>{title}</h2>
+					<p>{text}</p>
+				</div>
+				<div class="grid">
+					{colors.filter((item) => item.group === id).map((item) => {
+						const { rgb, hsl } = details(item.hex);
+
+						return (
+							<article class="swatch">
+								<div class="swatch-color" style={`background:${item.hex};color:${readableOn(item.hex)}`}>{item.name}</div>
+								<div class="swatch-body">
+									<div class="values">
+										<button class="copy" type="button" data-copy={item.hex} aria-label={`Copy ${item.name} ${item.hex}`}>{item.hex}</button>
+										<button class="copy" type="button" data-copy={rgb} aria-label={`Copy ${item.name} ${rgb}`}>{rgb}</button>
+										<button class="copy" type="button" data-copy={hsl} aria-label={`Copy ${item.name} ${hsl}`}>{hsl}</button>
+										{item.pantone && <span>{item.pantone}</span>}
+									</div>
+									<p>{item.role}</p>
+								</div>
+							</article>
+						);
+					})}
+				</div>
+			</section>
+		))}
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Contrast</h2>
+				<p>Ratios follow WCAG 2. Normal text needs at least 4.5:1, large text and shapes at least 3:1.</p>
+			</div>
+			<div class="table-scroll">
+				<table>
+					<thead>
+						<tr><th>Sample</th><th>Text</th><th>Background</th><th>Ratio</th><th>Use for</th></tr>
+					</thead>
+					<tbody>
+						{pairs.map(({ text, background, ratio, use }) => (
+							<tr>
+								<td><span class="sample" style={`color:${text.hex};background:${background.hex}`}>Aa</span></td>
+								<td>{text.name}</td>
+								<td>{background.name}</td>
+								<td>{ratio}:1</td>
+								<td>{use}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Use in code</h2>
+				<p>All values are available as <a href="/tokens/tokens.css">CSS variables</a> and <a href="/tokens/tokens.json">JSON</a>.</p>
+			</div>
+		</section>
+	</div>
+</Layout>

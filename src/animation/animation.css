@@ -1,0 +1,271 @@
+:root {
+	--page: var(--ui-bg);
+	--text: var(--ui-text);
+	--muted: var(--ui-muted);
+	--control: var(--ui-surface);
+	--control-border: var(--ui-line);
+
+	/* Raster: dunne hulplijnen. */
+	--grid-line: rgb(0 0 0 / 0.22);
+	--label: #6f6f6b;
+
+	/* Constructie: schetslijnen. */
+	--outline: #3d3d3d;
+	--shape: #fa4616;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--grid-line: rgb(255 255 255 / 0.2);
+		--label: #a8a8a3;
+		--outline: #d2d2d2;
+	}
+}
+
+#stage {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* 3D-variant (3d.html). */
+
+canvas#stage {
+	aspect-ratio: 1;
+}
+
+canvas#stage.can-orbit {
+	cursor: grab;
+	touch-action: none;
+}
+
+canvas#stage.is-dragging {
+	cursor: grabbing;
+}
+
+.webgl-message {
+	display: none;
+}
+
+.no-webgl .webgl-message {
+	display: block;
+}
+
+.no-webgl #stage,
+.no-webgl .step,
+.no-webgl .controls {
+	display: none;
+}
+
+.grid-line {
+	stroke: var(--grid-line);
+	stroke-width: 1.2;
+}
+
+.label {
+	fill: var(--label);
+	font: 400 24px ui-monospace, SFMono-Regular, Menlo, monospace;
+	text-anchor: middle;
+	dominant-baseline: central;
+}
+
+.outline {
+	fill: none;
+	stroke: var(--outline);
+	stroke-width: 1.8;
+	stroke-linecap: square;
+}
+
+.shape {
+	fill: var(--shape);
+}
+
+#icon {
+	transform-box: view-box;
+	transform-origin: 450px 450px;
+}
+
+.step {
+	display: flex;
+	gap: 12px;
+	align-items: baseline;
+	min-height: 1.5em;
+	margin: 4px 0 12px;
+}
+
+#step-count {
+	color: var(--muted);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.controls button {
+	min-width: 44px;
+	padding: 8px 14px;
+	border: 1px solid var(--control-border);
+	border-radius: 6px;
+	background: var(--control);
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+.controls button:disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+#play {
+	min-width: 104px;
+}
+
+#scrubber {
+	flex: 1 1 200px;
+	accent-color: var(--shape);
+}
+
+/*
+ * Schetsvariant (sketch.html): potlood op papier, of krijt op een schoolbord in het donkere thema.
+ * Rough.js zet zelf een kleur en lijndikte op elk pad; de regels hier gaan daar overheen.
+ */
+
+.sketch {
+	--paper: #fbf8f0;
+	--paper-edge: rgb(0 0 0 / 0.12);
+	--grain-opacity: 0.2;
+	--pencil: #33312e;
+	--pencil-opacity: 0.85;
+	--grid-pencil: #7d8791;
+	--label: #5f6b76;
+	--line: 2;
+	--trace: 3.4;
+	--crayon: 9;
+	--hand: "Bradley Hand", "Segoe Print", "Chalkboard SE", "Comic Sans MS", cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+	.sketch {
+		--paper: #25332d;
+		--paper-edge: #5a4632;
+		--grain-opacity: 0.16;
+		--pencil: #f1efe6;
+		--pencil-opacity: 0.8;
+		--grid-pencil: #b9c6bd;
+		--label: #c9d3cb;
+		--line: 2.6;
+		--trace: 4.4;
+		--crayon: 9.5;
+	}
+}
+
+.sketch #stage {
+	border: 1px solid var(--paper-edge);
+	border-radius: 6px;
+	background: var(--paper);
+	box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 8px 24px rgb(0 0 0 / 0.08);
+}
+
+.sketch .grain {
+	filter: url(#grain);
+	opacity: var(--grain-opacity);
+	pointer-events: none;
+}
+
+.sketch .pencil path {
+	stroke: var(--pencil);
+	stroke-width: var(--line);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-opacity: var(--pencil-opacity);
+}
+
+.sketch .grid-line path {
+	stroke: var(--grid-pencil);
+	stroke-width: 1.3;
+	stroke-opacity: 0.55;
+}
+
+.sketch .hatch path {
+	stroke-width: 1.6;
+	stroke-opacity: 0.45;
+}
+
+.sketch .trace path {
+	stroke-width: var(--trace);
+	stroke-opacity: 0.95;
+}
+
+.sketch .crayon path {
+	stroke-width: var(--crayon);
+	stroke-linecap: butt;
+	stroke-opacity: 0.9;
+}
+
+.sketch .label {
+	font: 400 30px var(--hand);
+}
+
+.sketch #step-name {
+	font-family: var(--hand);
+	font-size: 1.125rem;
+}
+
+/* Potlood in het lichte thema, krijtje in het donkere. */
+
+#pencil {
+	pointer-events: none;
+	transition: opacity 0.2s;
+}
+
+.tool-pencil .tool-body {
+	fill: #fab816;
+}
+
+.tool-pencil .tool-shade {
+	fill: rgb(0 0 0 / 0.14);
+}
+
+.tool-pencil .tool-wood {
+	fill: #ecd2a4;
+}
+
+.tool-pencil .tool-lead {
+	fill: #33312e;
+}
+
+.tool-pencil .tool-ferrule {
+	fill: #b9bcc0;
+}
+
+.tool-pencil .tool-eraser {
+	fill: #ff5a3c;
+}
+
+.tool-chalk {
+	display: none;
+}
+
+.tool-chalk .tool-body {
+	fill: #f1efe6;
+}
+
+@media (prefers-color-scheme: dark) {
+	.sketch .grain {
+		filter: url(#grain) invert(1);
+	}
+
+	.tool-pencil {
+		display: none;
+	}
+
+	.tool-chalk {
+		display: inline;
+	}
+}

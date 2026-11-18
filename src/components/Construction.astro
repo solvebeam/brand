@@ -1,0 +1,40 @@
+---
+import '../animation/animation.css';
+import Layout from '../layouts/Layout.astro';
+
+const { title, lead, current, sketch = false } = Astro.props;
+
+const variants = [
+	['clean', '/construction/', 'Clean'],
+	['sketch', '/construction/sketch/', 'Sketch'],
+	['3d', '/construction/3d/', '3D'],
+];
+---
+
+<Layout title={title} description={lead}>
+	<div class="wrap construction">
+		<header class="page-head">
+			<p class="eyebrow">Construction</p>
+			<h1>{title}</h1>
+			<p class="lead">{lead}</p>
+		</header>
+		<div class:list={{ sketch }}>
+			<nav class="variants" aria-label="Animation variants">
+				{variants.map(([id, href, label]) => <a href={href} aria-current={id === current ? 'page' : undefined}>{label}</a>)}
+			</nav>
+			<slot />
+			<p class="step">
+				<span id="step-count"></span>
+				<span id="step-name"></span>
+			</p>
+			<div class="controls">
+				<button type="button" id="prev" aria-label="Previous step">◀</button>
+				<button type="button" id="play">Play</button>
+				<button type="button" id="next" aria-label="Next step">▶</button>
+				<button type="button" id="restart">Restart</button>
+				<slot name="controls" />
+				<input type="range" id="scrubber" min="0" value="0" step="1" aria-label="Position in the animation" />
+			</div>
+		</div>
+	</div>
+</Layout>

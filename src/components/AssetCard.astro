@@ -1,0 +1,15 @@
+---
+const { title, asset, alt = '' } = Astro.props;
+---
+
+<article class="asset">
+	<div class={`asset-preview tone-${asset.tone}`}>
+		<img src={asset.preview} alt={alt} loading="lazy" />
+	</div>
+	<div class="asset-body">
+		<h3>{title}</h3>
+		<div class="asset-links">
+			{asset.links.map(({ label, href }) => <a href={href} download>{label}</a>)}
+		</div>
+	</div>
+</article>

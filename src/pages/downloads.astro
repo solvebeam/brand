@@ -1,0 +1,79 @@
+---
+import AssetCard from '../components/AssetCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { iconAsset, iconVariants, listFolder, logoAsset, logoVariants, wordmarkAsset, wordmarkVariants } from '../lib/assets.js';
+
+const folders = [
+	['favicon', 'Favicons and app icons', 'ICO, SVG, touch icon, PWA icons and a web manifest.'],
+	['social', 'Social media', 'Avatars, an Open Graph image, a GitHub preview and an X banner.'],
+	['integrations', 'Integrations', 'Fixed sizes for Moneybird and Google Workspace.'],
+	['fonts', 'Fonts', 'Roboto in the three brand weights, with its licence.'],
+];
+---
+
+<Layout title="Downloads" description="Download every SolveBeam logo, icon, favicon, social image and font.">
+	<div class="wrap">
+		<header class="page-head">
+			<p class="eyebrow">Downloads</p>
+			<h1>All brand files</h1>
+			<p class="lead">Prefer SVG wherever it is supported. PNG files have a transparent background and are named by their size, so these URLs are safe to link to.</p>
+			<div class="actions">
+				<a class="button button-primary" href="/downloads/solvebeam-brand-assets.zip" download>Download everything (ZIP)</a>
+			</div>
+		</header>
+
+		<section class="section" id="logos">
+			<div class="section-head"><h2>Horizontal logo</h2></div>
+			<div class="grid grid-wide">
+				{logoVariants.map(([id, label]) => <AssetCard title={label} asset={logoAsset('horizontal', id)} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head"><h2>Stacked logo</h2></div>
+			<div class="grid">
+				{logoVariants.map(([id, label]) => <AssetCard title={label} asset={logoAsset('stacked', id)} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head"><h2>Icon</h2><p>PNG sizes are in pixels.</p></div>
+			<div class="grid">
+				{iconVariants.map(([id, label]) => <AssetCard title={label} asset={iconAsset(id)} />)}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head"><h2>Wordmark</h2></div>
+			<div class="grid grid-wide">
+				{wordmarkVariants.map(([id, label]) => <AssetCard title={label} asset={wordmarkAsset(id)} />)}
+			</div>
+		</section>
+
+		{folders.map(([folder, title, text]) => (
+			<section class="section">
+				<div class="section-head"><h2>{title}</h2><p>{text}</p></div>
+				<ul class="file-list">
+					{listFolder(folder).map(({ name, href, size, isImage }) => (
+						<li>
+							{isImage && <img src={href} alt="" loading="lazy" />}
+							<a href={href} download>{name}</a>
+							<span>{size}</span>
+						</li>
+					))}
+				</ul>
+			</section>
+		))}
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Design tokens</h2>
+				<p>Colours and typography for use in code.</p>
+			</div>
+			<div class="actions" style="margin-top:0">
+				<a class="button" href="/tokens/tokens.css" download>tokens.css</a>
+				<a class="button" href="/tokens/tokens.json" download>tokens.json</a>
+			</div>
+		</section>
+	</div>
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+	['/logo/', 'Logo', 'Icon, horizontal and stacked logos, with the rules for using them.'],
+	['/color/', 'Colour', 'Beam Orange, the Beam Gradient and the neutrals around them.'],
+	['/typography/', 'Typography', 'Roboto for the wordmark, headings and text.'],
+	['/story/', 'Story', 'What the name means and what the icon holds.'],
+	['/construction/', 'Construction', 'Watch the icon being built on its 9 × 9 grid.'],
+	['/downloads/', 'Downloads', 'Every file in every format, at a stable URL.'],
+];
+
+const quick = [
+	['Logo', 'SVG', '/assets/logo/horizontal/svg/solvebeam-logo-horizontal-on-light.svg'],
+	['Logo', 'PNG', '/assets/logo/horizontal/png/solvebeam-logo-horizontal-on-light-1024w.png'],
+	['Logo on dark', 'SVG', '/assets/logo/horizontal/svg/solvebeam-logo-horizontal-on-dark.svg'],
+	['Icon', 'SVG', '/assets/icon/svg/solvebeam-icon-gradient.svg'],
+	['Icon', 'PNG', '/assets/icon/png/solvebeam-icon-gradient-512.png'],
+	['Favicon', 'ICO', '/assets/favicon/favicon.ico'],
+];
+---
+
+<Layout>
+	<section class="hero">
+		<div class="wrap">
+			<div>
+				<p class="eyebrow">Brand guidelines and assets</p>
+				<h1>Everything SolveBeam looks like, in one place.</h1>
+				<p class="lead">Logos, icons, colours and type, ready to use. Take what you need and follow the few rules that keep it recognisable.</p>
+				<div class="actions">
+					<a class="button button-primary" href="/downloads/solvebeam-brand-assets.zip" download>Download all assets</a>
+					<a class="button" href="/logo/">Logo guidelines</a>
+				</div>
+			</div>
+			<div class="blueprint">
+				<img src="/assets/icon/svg/solvebeam-icon-gradient.svg" alt="The SolveBeam icon on its construction grid" width="700" height="700" />
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="wrap">
+			<div class="grid">
+				{sections.map(([href, title, text]) => (
+					<a class="link-card" href={href}>
+						<h2 style="font-size:1.25rem">{title}</h2>
+						<p>{text}</p>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="wrap">
+			<div class="section-head">
+				<h2>Most used files</h2>
+			</div>
+			<div class="actions" style="margin-top:0">
+				{quick.map(([label, format, href]) => <a class="button" href={href} download>{label} ({format})</a>)}
+			</div>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Copied from assets/ and tokens/ by scripts/sync-assets.mjs.
+public/assets/
+public/tokens/
+public/downloads/
+public/favicon.ico
+public/favicon.svg
+public/apple-touch-icon.png

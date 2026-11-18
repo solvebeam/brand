@@ -1,0 +1,84 @@
+---
+import '@fontsource-variable/roboto/wght.css';
+import '../styles/global.css';
+
+const { title, description = 'The SolveBeam logo, icon, colours, typography and story, ready to download and use.' } = Astro.props;
+
+const pageTitle = title ? `${title} | SolveBeam Brand` : 'SolveBeam Brand';
+const path = Astro.url.pathname;
+
+const nav = [
+	['/logo/', 'Logo'],
+	['/color/', 'Colour'],
+	['/typography/', 'Typography'],
+	['/story/', 'Story'],
+	['/construction/', 'Construction'],
+	['/downloads/', 'Downloads'],
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={new URL(path, Astro.site)} />
+		<link rel="icon" href="/favicon.ico" sizes="48x48" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+		<meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={new URL(path, Astro.site)} />
+		<meta property="og:image" content={new URL('/assets/social/solvebeam-open-graph-1200x630.png', Astro.site)} />
+		<meta name="twitter:card" content="summary_large_image" />
+	</head>
+	<body>
+		<a class="skip-link" href="#content">Skip to content</a>
+		<header class="site-header">
+			<div class="wrap">
+				<a class="site-logo" href="/" aria-label="SolveBeam Brand home">
+					<picture>
+						<source media="(prefers-color-scheme: dark)" srcset="/assets/logo/horizontal/svg/solvebeam-logo-horizontal-on-dark.svg" />
+						<img src="/assets/logo/horizontal/svg/solvebeam-logo-horizontal-on-light.svg" alt="SolveBeam" width="132" height="26" />
+					</picture>
+				</a>
+				<nav class="site-nav" aria-label="Main">
+					{nav.map(([href, label]) => <a href={href} aria-current={path.startsWith(href) ? 'page' : undefined}>{label}</a>)}
+				</nav>
+			</div>
+		</header>
+		<main id="content">
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<div class="wrap">
+				<span>© SolveBeam. The logo and name are not covered by an open-source licence.</span>
+				<a href="https://www.solvebeam.com/">solvebeam.com</a>
+			</div>
+		</footer>
+		<script>
+			for (const button of document.querySelectorAll('[data-copy]')) {
+				const label = button.textContent;
+
+				button.addEventListener('click', async () => {
+					try {
+						await navigator.clipboard.writeText(button.dataset.copy);
+						button.textContent = 'Copied';
+					} catch {
+						button.textContent = 'Copy failed';
+					}
+
+					setTimeout(() => {
+						button.textContent = label;
+					}, 1400);
+				});
+			}
+		</script>
+	</body>
+</html>

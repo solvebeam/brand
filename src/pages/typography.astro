@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { typography } from '../brand/tokens.js';
+
+const weights = [
+	['Regular', 400, 'Body text and captions'],
+	['Medium', 500, 'Small headings, labels and buttons'],
+	['Bold', 700, 'Headings and the wordmark'],
+];
+
+const samples = {
+	display: 'Solve it simply',
+	h1: 'One solution at a time',
+	h2: 'Precision and simplicity',
+	h3: 'Open source and creative code',
+	body: 'SolveBeam stands for precision, simplicity and innovation in web development.',
+	small: 'If you can\'t explain it simply, you don\'t understand it well enough.',
+};
+
+const snippet = `body {
+	font-family: ${typography.stack};
+	font-weight: 400;
+	line-height: 1.6;
+}`;
+---
+
+<Layout title="Typography" description="Roboto is the SolveBeam typeface: weights, type scale and font files.">
+	<div class="wrap">
+		<header class="page-head">
+			<p class="eyebrow">Typography</p>
+			<h1>One typeface: Roboto</h1>
+			<p class="lead">The wordmark is set in Roboto Bold. Headings and text use the same family, which keeps everything simple and consistent.</p>
+			<div class="actions">
+				<a class="button button-primary" href="https://fonts.google.com/specimen/Roboto">Roboto on Google Fonts</a>
+				<a class="button" href="/assets/fonts/LICENSE-Roboto.txt">Font licence</a>
+			</div>
+		</header>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Weights</h2>
+			</div>
+			<div class="weights">
+				{weights.map(([name, weight, use]) => (
+					<div class="weight">
+						<strong style={`font-weight:${weight}`}>Aa</strong>
+						<h3>{name} {weight}</h3>
+						<span>{use}</span>
+						<div class="asset-links"><a href={`/assets/fonts/roboto-latin-${weight}-normal.woff2`} download>WOFF2</a></div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Type scale</h2>
+			</div>
+			{typography.scale.map(({ id, label, size, lineHeight, weight, tracking }) => (
+				<div class="specimen">
+					<small>{label}<br />{size} / {lineHeight} / {weight}</small>
+					<div style={`font-size:min(${size}, 9vw);line-height:${lineHeight};font-weight:${weight};letter-spacing:${tracking}`}>{samples[id]}</div>
+				</div>
+			))}
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Use in code</h2>
+				<p>The system fonts in the stack are a fallback for when Roboto cannot load.</p>
+			</div>
+			<pre><code>{snippet}</code></pre>
+		</section>
+	</div>
+</Layout>
